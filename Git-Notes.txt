@@ -1,0 +1,15 @@
+git init initializes a git repository, make sure that you are within the directory that you want to initialize, creates empty repository (/.git/), repository is a hidden directory where Git operates
+git status shows current state of project, “untracked” = new file
+git add [filename.filetype] tells git to start tracking changes to given file, adds to staging area, you can add or remove files from the stage before storing them in the repository, you can use wildcards with add ☺
+git commit –m “Title your commit” 
+git log a journal that lists all commits in order
+git remote add [origin] [https://github.com/repo_name.git] adds a remote repository
+git push –u [origin] [master] tells git where to put our commits when we’re ready, the name of our remote in this example is origin and the default local branch name is master, the –u tells git to remember the parameters next time so that we can just push git and it knows what to do, pushes to remote repository ☺
+git pull [origin] [master] after some time has passed can use this to check for changes on our github repo and pull down any new changes (useful when others are working on it too)
+git diff HEAD shows what is different form our last commit,  in this case use HEAD pointer to find diff of our most recent commit
+git reset [name.txt] unstages files
+git checkout --[name.txt] changes files to how they were at the last commit, also allows you to switch between branches
+git branch clean_up  creates a new branch called clean_up
+git rm ‘*.txt’ removes files from disk and also stages the removal of files, then need to commit to everything
+git merge clean_up  merges the clean_up branch with the master branch
+git branch –d clean_up deletes the clean_up branch
