@@ -22,6 +22,7 @@ Tests are often called **specifications**.  **Examples** are given to test a pro
 1. it
 2. describe [Class_name or "String"] do
 3. include() is used to check that something is part of an array
+4. its example: its(:brain) {should be_nil}
 
 An **assertion** states what something "should" be.  Example: zombie.name.should == "Ash"
 **Modifier** should, be
