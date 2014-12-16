@@ -40,9 +40,9 @@ before {:each} runs before each example, can also run before{:all} could also ru
 
 **Filters** You can tag each it or context blocks with a filter at end of line, Example vegan: true tags as vegan, when running rspec in bash, you can choose to run only certain tags, or can put in spec_helper configure block.  Tip:  you can tag slow examples, so that you don't have to run them every time.
 
-**Stub** For replacing a method with code that returns a specified result, basically blanks out specified method in default
+**Stub** For replacing a method with code that returns a specified result, basically blanks out specified method in default.  can also make sure it is called x number of times with .once, .twice, .at_least(x).times, .at_most(x).times, .any_number_of_times  you can also check the arguments that it recieves: .with(no_args()), .with(any_args()), .with("B", anything())), .with( x, kind_of(Numeric)), .with(/zombie ash/)
 
-**Mock** a stub with an expectation attached to it.  Example: zombie.weapon.should_recieve(:slice)  stubs out slice method and makes expectation that it is called
+**Mock** a stub with an expectation attached to it.  Example: zombie.weapon.should_recieve(:slice)  stubs out slice method and makes expectation that it is called. 
 
 # Method
 ### gem install rspec 
