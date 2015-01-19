@@ -14,6 +14,12 @@
 # Controllers 
 -Control models and views
 -rails follows convention over configuration; make sure url, folder, method named appropriately
+-remember @ indicates an instance variable
 ### Conventions("thing" is the name of your program)
 1.) thing_controller.rb 
 class ThingController < ApplicationController
+def show (maps to show.html.erb; where we typically call our models)
+@thing= Thing.find(params[:id]) (pulls out first thing, our action)
+render action: 'status' (redirects show method to status.html.erb)
+end
+end
