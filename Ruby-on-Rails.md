@@ -66,3 +66,4 @@ Also remember to update application.html.erb to include
 <div id ="notice><%= flash[:notice] %>
 <% end %>
 
+note: to make code more dry, create check_auth method and get_tweet method instead of re-creating in each method
