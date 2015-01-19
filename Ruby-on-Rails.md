@@ -10,3 +10,10 @@
 -edit links with <%= link_to "Edit", edit_tweet_path(tweet) %>
 
 -delete links with <%= link_to "Destroy", tweet, method: :delete %>
+
+# Controllers 
+-Control models and views
+-rails follows convention over configuration; make sure url, folder, method named appropriately
+### Conventions("thing" is the name of your program)
+1.) thing_controller.rb 
+class ThingController < ApplicationController
