@@ -76,3 +76,5 @@ note: to make code more dry, create check_auth method and get_tweet method inste
 -Custom routes (i.e. two urls for the same page) can be defined by "path" => "controller#action"
 resources :tweets
 get '/new_tweet => 'tweets#new'
+
+-to link to the custom path: <%= link_to "All Tweets", all_tweets_path %>
