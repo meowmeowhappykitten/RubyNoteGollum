@@ -62,7 +62,7 @@ redirect_to(tweets_path) (redirects request)
 
 Also remember to update application.html.erb to include
 
-<% if flash[:notice] %>  
+<% if flash[:notice] %>
 <div id ="notice><%= flash[:notice] %>  
 <% end %>
 
