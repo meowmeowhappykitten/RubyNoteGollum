@@ -1,3 +1,19 @@
+# Commands
+
+rails new (creates new rails application)
+
+rails server (runs app on server)
+
+rails generate (shows all of the commands)
+
+rails generate model (shows more commands)
+
+rails console (opens up rails console)
+
+reload! (reloads console, must be done after each time the model txt files are updated)
+
+rake routes (tells you the paths and controller names necessary in you model)
+
 # View (UI)
 -.html.erb files can use ruby in html file (executable ruby).  To insert ruby line in html document, use <% [code here] %>, to print ruby line use <%= [code here] %> syntax
 
