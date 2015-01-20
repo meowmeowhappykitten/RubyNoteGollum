@@ -1,3 +1,11 @@
+#Ruby on Rails
+
+scaffold- the basic building block for most rails app, gives view to list, edit, create new items.  For rails generate scaffold command, must list field:type where field is variable and type is string, text, integer, boolean, decimal, float, binary, date, time, dateline
+
+database migrations- how we version our database/ keep track of our changes without stepping on anyone's toes
+
+
+
 ## Commands
 
 rails new (creates new rails application)
@@ -17,6 +25,17 @@ rake routes (tells you the paths and controller names necessary in you model)
 rails generate (generate new code, short-cut alias "g")
 
 rails dbconsole (start a console for the database in config/database.yml shortcut "db")
+
+rake db:migrate (runs all missing migrations files)
+
+rake db:rollback (rolls back to previous migration)
+
+rake db:schema:dump (dumps to current db state)
+
+rake db:setup (creates db, runs schema and seed)
+
+rails generate migration (generates migration, can be run with Add<Anything> to <Table name> to have data organized in table, can also specify defaults, limit, first, after, email, null, unique...)
+
 
 all commands can be run with -h for more information
 
