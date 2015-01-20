@@ -2,17 +2,23 @@
 
 rails new (creates new rails application)
 
-rails server (runs app on server)
+rails server (runs app on server short-cut alias "s")
 
 rails generate (shows all of the commands)
 
 rails generate model (shows more commands)
 
-rails console (opens up rails console)
+rails console (opens up rails console short cut alias "c")
 
 reload! (reloads console, must be done after each time the model txt files are updated)
 
 rake routes (tells you the paths and controller names necessary in you model)
+
+rails generate (generate new code, short-cut alias "g")
+
+rails dbconsole (start a console for the database in config/database.yml shortcut "db")
+
+all commands can be run with -h for more information
 
 # View (UI)
 -.html.erb files can use ruby in html file (executable ruby).  To insert ruby line in html document, use <% [code here] %>, to print ruby line use <%= [code here] %> syntax
