@@ -1,4 +1,4 @@
-# Commands
+## Commands
 
 rails new (creates new rails application)
 
@@ -20,7 +20,7 @@ rails dbconsole (start a console for the database in config/database.yml shortcu
 
 all commands can be run with -h for more information
 
-# View (UI)
+## View (UI)
 -.html.erb files can use ruby in html file (executable ruby).  To insert ruby line in html document, use <% [code here] %>, to print ruby line use <%= [code here] %> syntax
 
 -/app/views/layouts/application.html.erb is automatically created by RoR, is used to put boiler plate parts of your application (headers/footers..), it will be used by default; use <% yield %> to show where to put the template pieces
@@ -33,7 +33,7 @@ all commands can be run with -h for more information
 
 -delete links with <%= link_to "Destroy", tweet, method: :delete %>
 
-# Controllers 
+## Controllers 
 
 -Control models and views
 
@@ -91,7 +91,7 @@ Also remember to update application.html.erb to include
 
 note: to make code more dry, create check_auth method and get_tweet method instead of re-creating in each method
 
-# Routes
+## Routes
 -routes defined in router in config/routes.rb 
 
 -this means that the url for certain code and methods is defined here
