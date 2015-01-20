@@ -67,3 +67,12 @@ Also remember to update application.html.erb to include
 <% end %>
 
 note: to make code more dry, create check_auth method and get_tweet method instead of re-creating in each method
+
+# Routes
+-routes defined in router in config/routes.rb 
+
+-this means that the url for certain code and methods is defined here
+
+-Custom routes (i.e. two urls for the same page) can be defined by "path" => "controller#action"
+resources :tweets
+get '/new_tweet => 'tweets#new'
