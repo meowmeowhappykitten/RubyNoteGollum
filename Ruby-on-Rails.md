@@ -62,7 +62,9 @@ redirect_to(tweets_path) (redirects request)
 
 Also remember to update application.html.erb to include
 
-<% if flash[:notice] %> <div id ="notice"><%= flash[:notice] %>  
+<% if flash[:notice] %> 
+<div id ="notice">
+<%= flash[:notice] %>  
 <% end %>
 
 note: to make code more dry, create check_auth method and get_tweet method instead of re-creating in each method
@@ -77,3 +79,7 @@ resources :tweets
 get '/new_tweet => 'tweets#new'
 
 -to link to the custom path: <%= link_to "All Tweets", all_tweets_path %>
+
+-URL can be redirected by get '/all' => redirect ('/tweets')
+
+-Set root path with root to: "tweets#index", can link with root_path
