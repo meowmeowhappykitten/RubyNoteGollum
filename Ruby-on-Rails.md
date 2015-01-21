@@ -39,6 +39,17 @@ rails g migration (generates migration, can be run with Add<Anything> to <Table 
 
 all commands can be run with -h for more information
 
+##Models
+
+Scopes help sort out certain demographics and allow symbols to be searched for (zombie.rotting)  
+scope :rotting, where(rotting: true) 
+
+Callbacks, define in models, can call before_save :method  
+example:  def make_rotting  
+if age > 20  
+self.rotting = true  
+end  
+
 ## View (UI)
 -.html.erb files can use ruby in html file (executable ruby).  To insert ruby line in html document, use <% [code here] %>, to print ruby line use <%= [code here] %> syntax
 
