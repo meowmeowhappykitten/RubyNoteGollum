@@ -44,11 +44,12 @@ all commands can be run with -h for more information
 Scopes help sort out certain demographics and allow symbols to be searched for (zombie.rotting)  
 scope :rotting, where(rotting: true) 
 
-Callbacks, define in models, can call before_save :method  
+Callbacks, define in models; before_validation, after_validation, before_save, after_save, before_Create, after_create, before_update, after_update, before_destroy, after_destroy, can call before_save :method  
 example:  def make_rotting  
 if age > 20  
-self.rotting = true  
+self.rotting = true  (use self instead of @zombie because we don't need instance variable because they come from controller; reading attributes doesn't need self, setting attributes needs self)
 end  
+
 
 ## View (UI)
 -.html.erb files can use ruby in html file (executable ruby).  To insert ruby line in html document, use <% [code here] %>, to print ruby line use <%= [code here] %> syntax
