@@ -81,6 +81,7 @@ f.range_field :quantity (slider bar)
 f.email_field :email (useful on mobile)  
 f.url_field :website (useful on mobile)  
 f.telephone_field :mobile (number pad on mobile)  
+div_for helps display title/body info
 
 ## Controllers 
 
