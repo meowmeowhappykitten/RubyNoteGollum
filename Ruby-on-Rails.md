@@ -66,13 +66,21 @@ end
 
 -delete links with <%= link_to "Destroy", tweet, method: :delete %>
 
+-partials are how we reuse view code.  Their files start with an underscore
+
 ###Input Helpers  
 f.text_area (renders multiline text area)  
 f.check_box (used for booleans)    
-f.radio_button :decomp, 'fresh', checked: true    (radio button)
-f.radio_button :decomp, 'rotting' (radio button)
+f.radio_button :decomp, 'fresh', checked: true (radio button)  
+f.radio_button :decomp, 'rotting' (radio button)  
 <%= f.select :decomp, ['fresh', 'rotting', 'stale'] %> (select box with 3 options)  
-<%= f.select :decomp, [['fresh', 1], ['rotting', 2], ['stale', 3]] %> (select box with 3 options, each with a numerical value
+<%= f.select :decomp, [['fresh', 1], ['rotting', 2], ['stale', 3]] %> (select box with 3 options, each with a numerical value)  
+f.password_field :password (gives dots instead of characters when text entered)  
+f.number_field :price (gives number field with up/down arrows)  
+f.range_field :quantity (slider bar)  
+f.email_field :email (useful on mobile)  
+f.url_field :website (useful on mobile)  
+f.telephone_field :mobile (number pad on mobile)  
 
 ## Controllers 
 
@@ -146,3 +154,12 @@ get '/new_tweet => 'tweets#new'
 -URL can be redirected by get '/all' => redirect ('/tweets')
 
 -Set root path with root to: "tweets#index", can link with root_path
+
+-Nested Routes look like  
+resources :zombies do  
+  resources :tweets  
+end  
+and remember to update the controller  
+def show  
+   @tweet = @zombie.tweets.find(params[:id])  
+end
