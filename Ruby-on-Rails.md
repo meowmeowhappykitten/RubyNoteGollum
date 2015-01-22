@@ -4,6 +4,8 @@ scaffold- the basic building block for most rails app, gives view to list, edit,
 
 database migrations- how we version our database/ keep track of our changes without stepping on anyone's toes.  Migration commands: rename_column, rename_table, drop_table, change_column, change_column_default
 
+REST in Ruby: CRUD Read = get user; Create = post user; Update = put user; Destroy = delete user
+
 
 
 ## Commands
@@ -63,6 +65,14 @@ end
 -edit links with <%= link_to "Edit", edit_tweet_path(tweet) %>
 
 -delete links with <%= link_to "Destroy", tweet, method: :delete %>
+
+###Input Helpers  
+f.text_area (renders multiline text area)  
+f.check_box (used for booleans)    
+f.radio_button :decomp, 'fresh', checked: true    (radio button)
+f.radio_button :decomp, 'rotting' (radio button)
+<%= f.select :decomp, ['fresh', 'rotting', 'stale'] %> (select box with 3 options)  
+<%= f.select :decomp, [['fresh', 1], ['rotting', 2], ['stale', 3]] %> (select box with 3 options, each with a numerical value
 
 ## Controllers 
 
