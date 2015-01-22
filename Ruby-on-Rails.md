@@ -52,6 +52,11 @@ if age > 20
 self.rotting = true  (use self instead of @zombie because we don't need instance variable because they come from controller; reading attributes doesn't need self, setting attributes needs self)
 end  
 
+Zombie Mailer: in terminal run rails g mailer ZombieMailer decomp_change, lost_brain  
+then in app/mailers/zombie_mailer.rb create instance variables, can include attachments, then mail to: @zombie.email, subject: 'Your decomp stage has been changed." ... can also include from:, cc:, bcc:, reply_to...  
+you can create html emails by changing text file to html, can also create multipart (text and html emails) by making two files  
+Remember to update the model to include sending email and include methods previously defined in mailers.deliver.  method can pass self.  Can also run after_save :decomp_change_notification, if :decomp_changed?  
+Note: for mailing lists, subscribe, unsubscribe etc. the gem MadMiMi is good.
 
 ## View (UI)
 -.html.erb files can use ruby in html file (executable ruby).  To insert ruby line in html document, use <% [code here] %>, to print ruby line use <%= [code here] %> syntax
@@ -67,6 +72,21 @@ end
 -delete links with <%= link_to "Destroy", tweet, method: :delete %>
 
 -partials are how we reuse view code.  Their files start with an underscore
+
+-app = app-specific code; lib = shared code; vendor = 3rd party code; in production these locations get fingerprints (md5 codes) which help to cache/version them because fingerprint only changes when file changes; asset_path will include fingerprint in .erb file
+
+-by default, sassy css is used in rails -- supports nesting css
+
+-You also get CoffeeScript, a programming language that compiles into javascript; can make toggle fields, 
+
+-To precompile all files into /public/assets (on your server) run $ rake assets:precompile   and will minify your code (save loading time)
+
+###Sprockets //=  
+-tells application to grab jquery framework and include it all at this point in the file  
+//= require jquery   include the jQuery framework JavaScript  
+//= require jquery_ujs include Rails specific unobtrusive JavaScript  
+//= require_tree /   include all files in this directory  
+
 
 ###Input Helpers  
 f.text_area (renders multiline text area)  
