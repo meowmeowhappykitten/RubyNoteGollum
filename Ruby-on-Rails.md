@@ -41,6 +41,30 @@ rails g migration (generates migration, can be run with Add<Anything> to <Table 
 
 all commands can be run with -h for more information
 
+### AJAX  
+-Creating AJAX links  
+How to have link fade out when delete is pressed instead of refreshing browser  
+1.) Make the link a remote call 
+add , remote_true to link  
+2.) Allow controller to accept Javascript request  
+add format.js to respond_to block in zombies_controller  
+3.)Write the JavaScript to send back to the client  
+in zombies/destroy.js.erb write  $('#<%= dom_id(@zombie) %>').fadeOut();
+How to have a create zombie field:  
+1.) Write the format.js in the controller  
+2.) Refactor the view and create the form  
+refactor into partial (takout div, put into partial), add render zombie, in views, add  
+<%= form_for(Zombie.new, remote: true) do |f| %>  
+3.) Create JavaScript  
+$('div#zombies'.append("<%= escape_javascript(render @zombie) %>");  
+$('div#<%= dom_id(@zombie) %>').effect('highlight');  
+Create an AJAX form that can set a custom decomposition phase on the zombie show page.  
+1.) Create new custom route for our action  
+2.) Define the form  
+3.) Create the action in the controller  
+4.) Write the JavaScript to send back to the client  
+
+
 ##Models
 
 Scopes help sort out certain demographics and allow symbols to be searched for (zombie.rotting)  
