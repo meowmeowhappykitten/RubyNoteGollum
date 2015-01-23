@@ -184,3 +184,21 @@ and remember to update the controller
 def show  
    @tweet = @zombie.tweets.find(params[:id])  
 end
+
+-2 types of custom routes: :member Acts on a single resource, :collection Acts on a collection of resources
+
+- can customize JSON response.  Example: @zombie.to_json(only: [:name, :age])  
+can also use except:, include:  
+can set default in zombie model, def as_json(options = nil)  
+super(options ||
+              {include: :brain, except: :created_at)  
+end  
+
+
+### HTTP Status Codes  
+200 :ok  
+201 :created  
+422 :uprocessable_entity  
+401 :unauthorized  
+102 :processing  
+404 :not_found
