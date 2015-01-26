@@ -24,3 +24,9 @@ Note:  when running jQuery that interacts with DOM, must submit code AFTER DOM i
 -can also select by class example: $(".articles");  or by style element/id $("#container");  
 -pseudo-selector:  $("destination li:first"); selects first item in unordered list, can also use :last, or :odd to select odd list items(by index, so starts at 0) ...  
 
+###Traversing  
+-example:  $("#destinations").find("li");
+-when finding elements by traversing it has 2 parts: selection and traversal.  It usually takes more code, but is faster.
+- more examples:  $("li").first();  
+-Walking the DOM:  $("li").first().next();  is basically method chaining to select the element that you want.  ex.  $("li).first().parent();  or  $("destinations").children("li");  children, unlike find, only specifies direct descendants 
+-Traversal methods: .prev(); .last(); .first(); .next(); .children(); .find(); 
