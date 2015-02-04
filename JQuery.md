@@ -30,3 +30,12 @@ Note:  when running jQuery that interacts with DOM, must submit code AFTER DOM i
 - more examples:  $("li").first();  
 -Walking the DOM:  $("li").first().next();  is basically method chaining to select the element that you want.  ex.  $("li).first().parent();  or  $("destinations").children("li");  children, unlike find, only specifies direct descendants 
 -Traversal methods: .prev(); .last(); .first(); .next(); .children(); .find(); 
+
+###Appending the DOM
+$(document).ready(function() {  
+  var price = $('<p>From $399.99</p>');  
+  $('.vacation').before(price);  
+});  
+puts the price node before.vacation  
+-can also append with .append(<element>), .prepend(<element>), .after(<element>), .remove(), appendTO(<element>), .prependTo(<element>), .insertAfter(<element>), .insertBefore(<element>)  
+
