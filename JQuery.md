@@ -29,7 +29,10 @@ Note:  when running jQuery that interacts with DOM, must submit code AFTER DOM i
 -when finding elements by traversing it has 2 parts: selection and traversal.  It usually takes more code, but is faster.
 - more examples:  $("li").first();  
 -Walking the DOM:  $("li").first().next();  is basically method chaining to select the element that you want.  ex.  $("li).first().parent();  or  $("destinations").children("li");  children, unlike find, only specifies direct descendants 
--Traversal methods: .prev(); .last(); .first(); .next(); .children(); .find(); 
+-Traversal methods: .prev(); .last(); .first(); .next(); .children(); .find();  
+-Example:  
+$(document).ready() {  
+
 
 ###Appending the DOM
 $(document).ready(function() {  
@@ -39,3 +42,22 @@ $(document).ready(function() {
 puts the price node before.vacation  
 -can also append with .append(<element>), .prepend(<element>), .after(<element>), .remove(), appendTO(<element>), .prependTo(<element>), .insertAfter(<element>), .insertBefore(<element>)  
 
+###Acting on Interaction:  
+$document.ready(function() {  
+  $('button').on('click', function()  {  
+    var price = $('< p>From $399.99< /p>);  
+    $('.vacation').append(price);
+    $('button').remove();  
+  });  
+});  
+This will add the words "From $399.99" while removing the "Get price" button after it is clicked.  Happens after the DOM is finish loading.  
+The .ready method takes an event handler function as an argument  
+.on(<event>, <event handler>)  
+-Must refactor so that ALL buttons do not disappear/show up as price, just the one that is clicked on:  
+￼￼$document.ready(function() {  
+  $('button').on('click', function()  {  
+    var price = $('< p>From $399.99< /p>);  
+    $(this).closest('.vacation').append(price);
+    $(this).remove();  
+  });  
+}); 
