@@ -33,7 +33,7 @@ Note:  when running jQuery that interacts with DOM, must submit code AFTER DOM i
 
 ###Appending the DOM
 $(document).ready(function() {  
-  var price = $('<p>From $399.99</p>');  
+  var price = $('< p>From $399.99< /p>');  
   $('.vacation').before(price);  
 });  
 puts the price node before.vacation  
